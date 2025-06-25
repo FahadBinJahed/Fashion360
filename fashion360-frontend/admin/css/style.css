@@ -1,0 +1,574 @@
+:root {
+      --fashion-primary: #FF4F8F;
+      --fashion-secondary: #6A11CB;
+      --fashion-accent: #00C9FF;
+      --fashion-light: #FFF5F9;
+      --fashion-dark: #1A1A2E;
+      --sidebar-width: 280px;
+      --header-height: 80px;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FAFAFA;
+      color: #333;
+      overflow-x: hidden;
+    }
+    
+    /* Glass Morphism Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(106, 17, 203, 0.1);
+      padding: 2rem 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--fashion-dark);
+    }
+    
+    .sidebar-brand i {
+      margin-right: 0.75rem;
+      font-size: 1.8rem;
+      background: linear-gradient(45deg, var(--fashion-primary), var(--fashion-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .sidebar-nav {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .sidebar-nav-item {
+      margin: 0.25rem 0;
+    }
+    
+    .sidebar-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+      color: #555;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: 0 1rem;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .sidebar-nav-link:hover {
+      background-color: rgba(255, 79, 143, 0.1);
+      color: var(--fashion-primary);
+      transform: translateX(5px);
+    }
+    
+    .sidebar-nav-link.active {
+      background: linear-gradient(90deg, rgba(255, 79, 143, 0.1), transparent);
+      color: var(--fashion-primary);
+      border-left: 3px solid var(--fashion-primary);
+    }
+    
+    .sidebar-nav-link i {
+      margin-right: 0.75rem;
+      font-size: 1.2rem;
+    }
+    
+    /* Main Content */
+    .main-content {
+      margin-left: var(--sidebar-width);
+      padding: 2rem;
+      min-height: 100vh;
+      transition: all 0.3s ease;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .header-title {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin: 0;
+      background: linear-gradient(45deg, var(--fashion-primary), var(--fashion-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* Stats Cards - Floating Design */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--fashion-primary), var(--fashion-secondary));
+    }
+    
+    .stat-card i {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--fashion-primary);
+    }
+    
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--fashion-dark);
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 500;
+    }
+    
+    /* Cards - Modern Design */
+    .card {
+      background: white;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      margin-bottom: 2rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    
+    .card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+    
+    .card-header {
+      background-color: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .card-header h5 {
+      font-weight: 600;
+      margin: 0;
+      color: var(--fashion-dark);
+    }
+    
+    /* Tables - Clean Design */
+    .table-responsive {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .table {
+      width: 100%;
+      margin-bottom: 0;
+    }
+    
+    .table th {
+      background-color: #F8F9FA;
+      color: #555;
+      font-weight: 600;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #EEE;
+    }
+    
+    .table td {
+      padding: 1rem 1.5rem;
+      vertical-align: middle;
+      border-bottom: 1px solid #F5F5F5;
+    }
+    
+    .table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .table tr:hover td {
+      background-color: #F8F9FA;
+    }
+    
+    
+    .badge {
+      padding: 0.4em 0.8em;
+      font-weight: 600;
+      font-size: 0.75rem;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+    }
+    
+    .badge-pending {
+      background-color: rgba(255, 193, 7, 0.1);
+      color: #FFA000;
+    }
+    
+    .badge-processing {
+      background-color: rgba(41, 121, 255, 0.1);
+      color: #1976D2;
+    }
+    
+    .badge-completed {
+      background-color: rgba(56, 142, 60, 0.1);
+      color: #388E3C;
+    }
+    /* Add these to your existing badge styles */
+.badge-cancelled {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #D32F2F;
+}
+
+.badge-secondary {
+  background-color: rgba(158, 158, 158, 0.1);
+  color: #9E9E9E;
+}
+
+/* Optional: If you want specific shipped style */
+.badge-shipped {
+  background-color: rgba(106, 27, 154, 0.1);
+  color: #6A1B9A;
+}
+    
+    /* Loading Animation */
+    .loading-spinner {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 3px solid rgba(255, 79, 143, 0.2);
+      border-radius: 50%;
+      border-top-color: var(--fashion-primary);
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Buttons */
+    .btn {
+      border-radius: 8px;
+      font-weight: 600;
+      padding: 0.5rem 1.25rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(45deg, var(--fashion-primary), var(--fashion-secondary));
+      border: none;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 79, 143, 0.3);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .sidebar {
+        transform: translateX(-100%);
+        z-index: 1001;
+      }
+      
+      .sidebar.active {
+        transform: translateX(0);
+      }
+      
+      .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+      }
+    }
+    
+    /* Floating Action Button */
+    .fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--fashion-primary), var(--fashion-secondary));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(255, 79, 143, 0.3);
+      cursor: pointer;
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+    
+    .fab:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(255, 79, 143, 0.4);
+    }
+    
+    /* Stock Indicator */
+    .stock-indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+    
+    .stock-low {
+      background-color: #FF5252;
+    }
+    
+    .stock-medium {
+      background-color: #FFC107;
+    }
+    
+    .stock-good {
+      background-color: #4CAF50;
+    }
+
+    .order-actions .btn {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    #orderDetailsModal .modal-body {
+      padding: 1.5rem;
+    }
+    
+    .order-detail-row {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #f1f1f1;
+    }
+    
+    .order-detail-label {
+      font-weight: 600;
+      color: #555;
+    }
+    
+    .order-items-table {
+      margin-top: 1.5rem;
+    }
+    
+    .order-items-table th {
+      background-color: #f8f9fa;
+    }
+ /* Inventory specific styles */
+.inventory-actions {
+  white-space: nowrap;
+}
+
+.inventory-actions .btn {
+  margin-right: 5px;
+}
+
+.inventory-actions .btn:last-child {
+  margin-right: 0;
+}
+
+/* Quantity badges */
+.badge-danger {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #D32F2F;
+}
+
+.badge-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #FFA000;
+}
+
+.badge-success {
+  background-color: rgba(56, 142, 60, 0.1);
+  color: #388E3C;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+/* Product specific styles */
+.product-actions {
+  white-space: nowrap;
+}
+
+.product-actions .btn {
+  margin-right: 5px;
+}
+
+.product-actions .btn:last-child {
+  margin-right: 0;
+}
+
+/* Stock badges */
+.badge-danger {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #D32F2F;
+}
+
+.badge-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #FFA000;
+}
+
+.badge-success {
+  background-color: rgba(56, 142, 60, 0.1);
+  color: #388E3C;
+}
+
+/* Price formatting */
+.price-cell {
+  font-family: monospace;
+  text-align: right;
+}
+/* Categories specific styles */
+.category-actions {
+  white-space: nowrap;
+}
+
+.category-actions .btn {
+  margin-right: 5px;
+}
+
+.category-actions .btn:last-child {
+  margin-right: 0;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+/* Customer specific styles */
+.customer-actions {
+  white-space: nowrap;
+}
+
+.customer-actions .btn {
+  margin-right: 5px;
+}
+
+.customer-actions .btn:last-child {
+  margin-right: 0;
+}
+
+/* Email column styling */
+.email-cell {
+  word-break: break-all;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+/* Payment specific styles */
+.payment-actions {
+  white-space: nowrap;
+}
+
+.payment-actions .btn {
+  margin-right: 5px;
+}
+
+.payment-actions .btn:last-child {
+  margin-right: 0;
+}
+
+/* Payment status badges */
+.badge-success {
+  background-color: rgba(56, 142, 60, 0.1);
+  color: #388E3C;
+}
+
+.badge-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #FFA000;
+}
+
+.badge-danger {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #D32F2F;
+}
+
+.badge-info {
+  background-color: rgba(41, 121, 255, 0.1);
+  color: #1976D2;
+}
+
+/* Amount formatting */
+.amount-cell {
+  font-family: monospace;
+  text-align: right;
+}
