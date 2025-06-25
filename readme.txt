@@ -22,3 +22,19 @@ Open http://localhost/phpmyadmin in your browser.
 Create a new database (e.g., fashion360).
 Go to the Import tab, select your .sql file, and import it.
 
+C. Update your FastAPI backend to use this database:
+
+In your project, open the .env file (in the fashion360-eai directory).
+Set the database URL, for example: DATABASE_URL=mysql+pymysql://root:password@localhost:3306/fashion360
+Replace root and password with your MySQL username and password (default is root and blank password).
+fashion360 is the database name you created.
+
+
+3. How to run the frontend
+Your frontend is in the fashion360-frontend folder.
+You can open the HTML files directly in your browser (e.g., index.html or index.html).
+The frontend will make API calls to your backend at http://127.0.0.1:8000.
+4. How everything works together
+Backend (FastAPI): Handles API requests, talks to the MySQL database.
+Database (MySQL/XAMPP): Stores your data, accessed by the backend.
+Frontend (HTML/JS): Runs in your browser, talks to the backend via API.
